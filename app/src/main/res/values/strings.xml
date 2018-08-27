@@ -6,4 +6,34 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <!--Activity_principal_drawer-->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_dogs">Perros</string>
+    <string name="nav_follow_us">Siguenos</string>
+    <string name="nav_maps">Mapa</string>
+    <string name="nav_contact">Contacto</string>
+
+    <!--FragmentHome-->
+    <string name="main_title">Fundacion Salva un Amigo</string>
+    <string name="main_logo">Logo principal</string>
+    <string name="main_text">Fundacion Salva un Amigo le ayudara a encontrar su mascota ideal, tenemos variedad de
+        razas para escoger. Ademas le ofrecemos una vista de todos los puntos de comida que tenemos, para que asi,
+        no tenga que preocuparse por no tener a donde dirigirse a comprarle alimento a su mascota. Tenemos atencion
+        las 24 horas del dia los siete dias a la semana por si tiene alguna inquietud, nuestra aplicacion le permite
+        contactarnos de forma inmediata.
+    </string>
+    <string name="main_text_two">Nuestras caracteristicas a ofrecerle son:</string>
+    <string name="characteristic_one">1. Mascotas de la mejor calidad y raza.</string>
+    <string name="characteristic_two">2. Atencion al cliente las 24 horas.</string>
+    <string name="characteristic_three">3. Varios puntos de comida.</string>
+    <string name="characteristic_four">4. Tenemos precios razonables.</string>
+    <string name="characteristic_five">5. No se arrepentira.</string>
+
+    <!--item_list_dog-->
+    <string name="image_list_dog">imagen del perro</string>
+    <string name="name_list_dog">Nombre</string>
+    <string name="age_list_dog">Edad</string>
+    <string name="breed_list_dog">Raza</string>
+    <string name="gender_list_dog">Genero</string>
 </resources>

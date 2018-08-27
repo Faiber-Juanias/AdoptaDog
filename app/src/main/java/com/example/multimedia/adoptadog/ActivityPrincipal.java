@@ -1,8 +1,11 @@
 package com.example.multimedia.adoptadog;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,24 +16,25 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.multimedia.adoptadog.Fragments.FragmentContact;
+import com.example.multimedia.adoptadog.Fragments.FragmentDogs;
+import com.example.multimedia.adoptadog.Fragments.FragmentFollowUs;
+import com.example.multimedia.adoptadog.Fragments.FragmentHome;
+import com.example.multimedia.adoptadog.Fragments.FragmentMaps;
+
 public class ActivityPrincipal extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, FragmentContact.OnFragmentInteractionListener,
+        FragmentDogs.OnFragmentInteractionListener, FragmentFollowUs.OnFragmentInteractionListener, FragmentHome.OnFragmentInteractionListener,
+        FragmentMaps.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -40,6 +44,10 @@ public class ActivityPrincipal extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //Ejecutamos el FragmentHome
+        Fragment objFragment = new FragmentHome();
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_fragment, objFragment).commit();
     }
 
     @Override
@@ -52,50 +60,44 @@ public class ActivityPrincipal extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_principal, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        //Creo una instancia null de Fragment
+        Fragment fragment = null;
+        boolean selectFragment = false;
 
-        } else if (id == R.id.nav_slideshow) {
+        if (id == R.id.nav_home){
+            fragment = new FragmentHome();
+            selectFragment = true;
+        }else if (id == R.id.nav_dogs){
+            fragment = new FragmentDogs();
+            selectFragment = true;
+        }else if (id == R.id.nav_follow_us){
+            fragment = new FragmentFollowUs();
+            selectFragment = true;
+        }else if (id == R.id.nav_maps){
+            fragment = new FragmentMaps();
+            selectFragment = true;
+        }else if (id == R.id.nav_contact){
+            fragment = new FragmentContact();
+            selectFragment = true;
+        }
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (selectFragment){
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_fragment, fragment).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

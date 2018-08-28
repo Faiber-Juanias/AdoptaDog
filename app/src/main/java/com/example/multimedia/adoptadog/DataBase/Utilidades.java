@@ -10,7 +10,7 @@ public class Utilidades {
     public static final String RAZA = "Raza";
     public static final String GENERO = "Genero";
     public static final String CREATE_TBL_PERRO = "CREATE TABLE " + TBL_PERRO + " (" +
-            ID + " INTEGER PRIMARY_KEY, " +
+            ID + " INTEGER PRIMARY KEY NOT NULL, " +
             IMAGEN + " INTEGER, " +
             NOMBRE + " TEXT, " +
             EDAD + " INTEGER, " +

@@ -7,6 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,6 +22,7 @@ import com.example.multimedia.adoptadog.Adapters.ListDog;
 import com.example.multimedia.adoptadog.DataBase.DataHelper;
 import com.example.multimedia.adoptadog.DataBase.Utilidades;
 import com.example.multimedia.adoptadog.DataDog.Dog;
+import com.example.multimedia.adoptadog.Dialog.FullDialog;
 import com.example.multimedia.adoptadog.R;
 
 import java.util.ArrayList;
@@ -31,7 +36,7 @@ import java.util.List;
  * Use the {@link FragmentDogs#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentDogs extends Fragment {
+public class FragmentDogs extends Fragment{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -104,13 +109,57 @@ public class FragmentDogs extends Fragment {
             @Override
             public void onClick(View v) {
                 int id = listDog.get(recyclerDogs.getChildAdapterPosition(v)).getId();
-                Toast.makeText(context, "ID: " + id, Toast.LENGTH_SHORT).show();
+                sendData(id);
             }
         });
         //Asignamos el adaptador al recycler
         recyclerDogs.setAdapter(objAdapter);
 
         return vista;
+    }
+
+    public void sendData(int id) {
+        objDb = connectDb();
+        //Creamos la consulta
+        String[] param = new String[]{String.valueOf(id)};
+        Cursor objCursor = objDb.query(Utilidades.TBL_PERRO, null, "" + Utilidades.ID + " = ?", param, null, null, null);
+        //Si se obtienen registros
+        if (objCursor.moveToFirst()){
+            do {
+                //Almacenamos los registros
+                int image = objCursor.getInt(1);
+                String name = objCursor.getString(2);
+                int age = objCursor.getInt(3);
+                String breed = objCursor.getString(4);
+                String gender = objCursor.getString(5);
+
+                //Instanciamos a FullDialog
+                FullDialog fullDialog = new FullDialog();
+
+                //Listamos los datos a FullDialog
+                Bundle bundle = new Bundle();
+                bundle.putInt(Utilidades.IMAGEN, image);
+                bundle.putString(Utilidades.NOMBRE, name);
+                bundle.putInt(Utilidades.EDAD, age);
+                bundle.putString(Utilidades.RAZA, breed);
+                bundle.putString(Utilidades.GENERO, gender);
+
+                //Pasamos los datos
+                fullDialog.setArguments(bundle);
+
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .replace(R.id.content_fragment, fullDialog)
+                        .addToBackStack(null)
+                        .commit();
+
+            }while (objCursor.moveToNext());
+        }
+        //Cerramos el cursor
+        objCursor.close();
+        //Cerramos la coneccion
+        objDb.close();
     }
 
     public void llenaLista(){

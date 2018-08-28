@@ -34,6 +34,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valUno.put(Utilidades.EDAD, 6);
         valUno.put(Utilidades.RAZA, "Beagle");
         valUno.put(Utilidades.GENERO, "Macho");
+        valUno.put(Utilidades.DESCRIPCION, "Los beagle son una raza de perros de tamaño pequeño a mediano. Tienen un aspecto similar al foxhound, pero de menor tamaño, con patas más cortas y orejas más largas y suaves.");
         db.insert(Utilidades.TBL_PERRO, null, valUno);
 
         ContentValues valDos = new ContentValues();
@@ -42,6 +43,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valDos.put(Utilidades.EDAD, 8);
         valDos.put(Utilidades.RAZA, "Boxer");
         valDos.put(Utilidades.GENERO, "Macho");
+        valDos.put(Utilidades.DESCRIPCION, "El bóxer alemán o bóxer —en alemán: Deutscher Boxer—, es una raza canina alemana de trabajo y compañía, tipo moloso, que tiende a un tamaño mediano.");
         db.insert(Utilidades.TBL_PERRO, null, valDos);
 
         ContentValues valTres = new ContentValues();
@@ -50,6 +52,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valTres.put(Utilidades.EDAD, 6);
         valTres.put(Utilidades.RAZA, "Boyero de berna");
         valTres.put(Utilidades.GENERO, "Macho");
+        valTres.put(Utilidades.DESCRIPCION, "El bernés de la montaña es una raza de perro boyero muy versátil que se originó en el Cantón de Berna, Suiza.");
         db.insert(Utilidades.TBL_PERRO, null, valTres);
 
         ContentValues valCuatro = new ContentValues();
@@ -58,6 +61,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valCuatro.put(Utilidades.EDAD, 8);
         valCuatro.put(Utilidades.RAZA, "Bull terrier ingles");
         valCuatro.put(Utilidades.GENERO, "Hembra");
+        valCuatro.put(Utilidades.DESCRIPCION, "El Bull terrier o bull terrier inglés es una raza canina de la familia de los terrier. Son conocidos por la forma única de su cabeza y sus pequeños ojos en forma triangular.");
         db.insert(Utilidades.TBL_PERRO, null, valCuatro);
 
         ContentValues valCinco = new ContentValues();
@@ -66,6 +70,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valCinco.put(Utilidades.EDAD, 8);
         valCinco.put(Utilidades.RAZA, "Bulldog americano");
         valCinco.put(Utilidades.GENERO, "Hembra");
+        valCinco.put(Utilidades.DESCRIPCION, "El bulldog americano es una raza de perro de granja originario del sureste de los Estados Unidos. Utilizado como perro guardián para el ganado o para la caza.");
         db.insert(Utilidades.TBL_PERRO, null, valCinco);
 
         ContentValues valSeis = new ContentValues();
@@ -74,6 +79,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valSeis.put(Utilidades.EDAD, 5);
         valSeis.put(Utilidades.RAZA, "Chihuahua");
         valSeis.put(Utilidades.GENERO, "Macho");
+        valSeis.put(Utilidades.DESCRIPCION, "El chihuahueño o chihuahua es una raza de perro originaria de México. Es una de las razas de perros más antiguas del continente americano, además de ser el perro más pequeño del mundo.");
         db.insert(Utilidades.TBL_PERRO, null, valSeis);
 
         ContentValues valSiete = new ContentValues();
@@ -82,6 +88,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valSiete.put(Utilidades.EDAD, 6);
         valSiete.put(Utilidades.RAZA, "Chow Chow");
         valSiete.put(Utilidades.GENERO, "Macho");
+        valSiete.put(Utilidades.DESCRIPCION, "El Chow Chow es una raza canina originaria del Norte de China. Se cree que fue uno de los perros nativos utilizados como modelo para el perro de Foo");
         db.insert(Utilidades.TBL_PERRO, null, valSiete);
 
         ContentValues valOcho = new ContentValues();
@@ -90,6 +97,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valOcho.put(Utilidades.EDAD, 3);
         valOcho.put(Utilidades.RAZA, "Grifon belga");
         valOcho.put(Utilidades.GENERO, "Hembra");
+        valOcho.put(Utilidades.DESCRIPCION, "El grifón belga es una raza canina que debe su nombre a su ciudad de origen: Bruselas, Bélgica.");
         db.insert(Utilidades.TBL_PERRO, null, valOcho);
 
         ContentValues valNueve = new ContentValues();
@@ -98,6 +106,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valNueve.put(Utilidades.EDAD, 4);
         valNueve.put(Utilidades.RAZA, "Labrador retriever");
         valNueve.put(Utilidades.GENERO, "Macho");
+        valNueve.put(Utilidades.DESCRIPCION, "El labrador retriever es una raza canina originaria de Terranova, en la actual Canadá. Es una de las razas más populares del mundo por la cantidad de ejemplares registrados.");
         db.insert(Utilidades.TBL_PERRO, null, valNueve);
 
         ContentValues valDiez = new ContentValues();
@@ -106,6 +115,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valDiez.put(Utilidades.EDAD, 8);
         valDiez.put(Utilidades.RAZA, "Lobo checoslovaco");
         valDiez.put(Utilidades.GENERO, "Macho");
+        valDiez.put(Utilidades.DESCRIPCION, "El perro lobo checoslovaco es una raza canina relativamente nueva, y cuyo linaje original se remonta a un experimento llevado a cabo en 1955 en Checoslovaquia.");
         db.insert(Utilidades.TBL_PERRO, null, valDiez);
 
         ContentValues valOnce = new ContentValues();
@@ -114,6 +124,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valOnce.put(Utilidades.EDAD, 2);
         valOnce.put(Utilidades.RAZA, "Pastor belga tervueren");
         valOnce.put(Utilidades.GENERO, "Macho");
+        valOnce.put(Utilidades.DESCRIPCION, "El pastor belga tervuerense es una de las cuatro variedades de raza canina en las que se divide el pastor belga.");
         db.insert(Utilidades.TBL_PERRO, null, valOnce);
 
         ContentValues valDoce = new ContentValues();
@@ -122,6 +133,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valDoce.put(Utilidades.EDAD, 3);
         valDoce.put(Utilidades.RAZA, "Pinscher miniatura");
         valDoce.put(Utilidades.GENERO, "Hembra");
+        valDoce.put(Utilidades.DESCRIPCION, "El pinscher miniatura es una raza de perro chihuahua que prolifera en los mercadillos ambulantes, perteneciente a la familia de los Pinschers originaria de Alemania, donde son llamados zwergpinscher.");
         db.insert(Utilidades.TBL_PERRO, null, valDoce);
 
         ContentValues valTrece = new ContentValues();
@@ -130,6 +142,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valTrece.put(Utilidades.EDAD, 5);
         valTrece.put(Utilidades.RAZA, "Pit bull terrier americano");
         valTrece.put(Utilidades.GENERO, "Hembra");
+        valTrece.put(Utilidades.DESCRIPCION, "El American Pit Bull Terrier es una raza canina, originaria de Estados Unidos y descendiente del Bull-and-terrier, una mezcla entre el antiguo bulldog y terriers.");
         db.insert(Utilidades.TBL_PERRO, null, valTrece);
 
         ContentValues valCatorce = new ContentValues();
@@ -138,6 +151,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valCatorce.put(Utilidades.EDAD, 7);
         valCatorce.put(Utilidades.RAZA, "Pomsky");
         valCatorce.put(Utilidades.GENERO, "Hembra");
+        valCatorce.put(Utilidades.DESCRIPCION, "");
         db.insert(Utilidades.TBL_PERRO, null, valCatorce);
 
         ContentValues valQuince = new ContentValues();
@@ -146,6 +160,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valQuince.put(Utilidades.EDAD, 7);
         valQuince.put(Utilidades.RAZA, "Raton de praga");
         valQuince.put(Utilidades.GENERO, "Macho");
+        valQuince.put(Utilidades.DESCRIPCION, "");
         db.insert(Utilidades.TBL_PERRO, null, valQuince);
 
         ContentValues valDiesiseis = new ContentValues();
@@ -154,6 +169,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valDiesiseis.put(Utilidades.EDAD, 4);
         valDiesiseis.put(Utilidades.RAZA, "Rottweiler");
         valDiesiseis.put(Utilidades.GENERO, "Macho");
+        valDiesiseis.put(Utilidades.DESCRIPCION, "");
         db.insert(Utilidades.TBL_PERRO, null, valDiesiseis);
 
         ContentValues valDiesisiete = new ContentValues();
@@ -162,6 +178,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valDiesisiete.put(Utilidades.EDAD, 5);
         valDiesisiete.put(Utilidades.RAZA, "San bernardo");
         valDiesisiete.put(Utilidades.GENERO, "Hembra");
+        valDiesisiete.put(Utilidades.DESCRIPCION, "");
         db.insert(Utilidades.TBL_PERRO, null, valDiesisiete);
 
         ContentValues valDiesiocho = new ContentValues();
@@ -170,6 +187,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valDiesiocho.put(Utilidades.EDAD, 6);
         valDiesiocho.put(Utilidades.RAZA, "Schnauzer gigante");
         valDiesiocho.put(Utilidades.GENERO, "Macho");
+        valDiesiocho.put(Utilidades.DESCRIPCION, "");
         db.insert(Utilidades.TBL_PERRO, null, valDiesiocho);
 
         ContentValues valDiesinueve = new ContentValues();
@@ -178,6 +196,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valDiesinueve.put(Utilidades.EDAD, 7);
         valDiesinueve.put(Utilidades.RAZA, "Sin pelo del peru");
         valDiesinueve.put(Utilidades.GENERO, "Hembra");
+        valDiesinueve.put(Utilidades.DESCRIPCION, "");
         db.insert(Utilidades.TBL_PERRO, null, valDiesinueve);
 
         ContentValues ValVeinte = new ContentValues();
@@ -186,6 +205,7 @@ public class DataHelper extends SQLiteOpenHelper{
         ValVeinte.put(Utilidades.EDAD, 7);
         ValVeinte.put(Utilidades.RAZA, "Welsh corgi pembroke");
         ValVeinte.put(Utilidades.GENERO, "Macho");
+        ValVeinte.put(Utilidades.DESCRIPCION, "");
         db.insert(Utilidades.TBL_PERRO, null, ValVeinte);
     }
 }

@@ -132,6 +132,7 @@ public class FragmentDogs extends Fragment{
                 int age = objCursor.getInt(3);
                 String breed = objCursor.getString(4);
                 String gender = objCursor.getString(5);
+                String desc = objCursor.getString(6);
 
                 //Instanciamos a FullDialog
                 FullDialog fullDialog = new FullDialog();
@@ -143,6 +144,7 @@ public class FragmentDogs extends Fragment{
                 bundle.putInt(Utilidades.EDAD, age);
                 bundle.putString(Utilidades.RAZA, breed);
                 bundle.putString(Utilidades.GENERO, gender);
+                bundle.putString(Utilidades.DESCRIPCION, desc);
 
                 //Pasamos los datos
                 fullDialog.setArguments(bundle);
@@ -170,7 +172,7 @@ public class FragmentDogs extends Fragment{
             do {
                 listDog.add(new Dog(objCursor.getInt(0), objCursor.getInt(1),
                         objCursor.getString(2), objCursor.getInt(3),
-                        objCursor.getString(4), objCursor.getString(5)));
+                        objCursor.getString(4), objCursor.getString(5), objCursor.getString(6)));
             }while (objCursor.moveToNext());
         }
         //Cerramos el cursor

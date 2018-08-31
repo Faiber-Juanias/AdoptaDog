@@ -32,7 +32,7 @@ public class FullDialog extends DialogFragment{
 
     private Toolbar toolbar;
     private ImageView imageDog;
-    private TextView nameDog, ageDog, breedDog, genderDog;
+    private TextView nameDog, ageDog, breedDog, genderDog, descDog;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("CutPasteId")
@@ -48,6 +48,7 @@ public class FullDialog extends DialogFragment{
         ageDog = (TextView) vista.findViewById(R.id.age_full_dialog);
         breedDog = (TextView) vista.findViewById(R.id.breed_full_dialog);
         genderDog = (TextView) vista.findViewById(R.id.gender_full_dialog);
+        descDog = (TextView) vista.findViewById(R.id.description_dog);
 
         //toolbardos.setVisibility(View.GONE);
 
@@ -68,6 +69,7 @@ public class FullDialog extends DialogFragment{
             ageDog.setText(String.valueOf(getArguments().getInt(Utilidades.EDAD)));
             breedDog.setText(getArguments().getString(Utilidades.RAZA));
             genderDog.setText(getArguments().getString(Utilidades.GENERO));
+            descDog.setText(getArguments().getString(Utilidades.DESCRIPCION));
         }
 
         return vista;

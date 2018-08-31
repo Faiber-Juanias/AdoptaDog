@@ -1,5 +1,6 @@
 package com.example.multimedia.adoptadog;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -76,6 +77,9 @@ public class ActivityPrincipal extends AppCompatActivity
             fragment = new FragmentFollowUs();
             selectFragment = true;
         }else if (id == R.id.nav_maps){
+            /*
+            Intent intent = new Intent(this, MapsDogs.class);
+            startActivity(intent);*/
             fragment = new FragmentMaps();
             selectFragment = true;
         }else if (id == R.id.nav_contact){

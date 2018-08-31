@@ -36,4 +36,5 @@
     <string name="age_list_dog">Edad</string>
     <string name="breed_list_dog">Raza</string>
     <string name="gender_list_dog">Genero</string>
+    <string name="title_activity_maps_dogs">Map</string>
 </resources>

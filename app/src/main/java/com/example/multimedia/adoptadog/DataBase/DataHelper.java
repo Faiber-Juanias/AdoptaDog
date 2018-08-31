@@ -151,7 +151,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valCatorce.put(Utilidades.EDAD, 7);
         valCatorce.put(Utilidades.RAZA, "Pomsky");
         valCatorce.put(Utilidades.GENERO, "Hembra");
-        valCatorce.put(Utilidades.DESCRIPCION, "");
+        valCatorce.put(Utilidades.DESCRIPCION, "Los pomsky es una raza de perros originarios de EE.UU., a día de hoy ¡ están  considerados un híbrido! Más bien como un perro mestizo, y no una raza, ya que se trata de un cruce muy reciente y no está aún reconocido oficialmente ni cuenta con pedigree establecido.");
         db.insert(Utilidades.TBL_PERRO, null, valCatorce);
 
         ContentValues valQuince = new ContentValues();
@@ -160,7 +160,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valQuince.put(Utilidades.EDAD, 7);
         valQuince.put(Utilidades.RAZA, "Raton de praga");
         valQuince.put(Utilidades.GENERO, "Macho");
-        valQuince.put(Utilidades.DESCRIPCION, "");
+        valQuince.put(Utilidades.DESCRIPCION, "El Pražský krysařík es una pequeña rdaza de perros de la República Checa que rara vez se ve fuera de su país de origen.");
         db.insert(Utilidades.TBL_PERRO, null, valQuince);
 
         ContentValues valDiesiseis = new ContentValues();
@@ -169,7 +169,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valDiesiseis.put(Utilidades.EDAD, 4);
         valDiesiseis.put(Utilidades.RAZA, "Rottweiler");
         valDiesiseis.put(Utilidades.GENERO, "Macho");
-        valDiesiseis.put(Utilidades.DESCRIPCION, "");
+        valDiesiseis.put(Utilidades.DESCRIPCION, "El rottweiler es una raza canina de tipo molosoide originaria de Alemania. Era conocido como perro carnicero de Rottweil porque estaba acostumbrado a pastorear ganado y tirar de los carritos de carnicería cargados de carne, junto con otros productos para el mercado.");
         db.insert(Utilidades.TBL_PERRO, null, valDiesiseis);
 
         ContentValues valDiesisiete = new ContentValues();
@@ -178,7 +178,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valDiesisiete.put(Utilidades.EDAD, 5);
         valDiesisiete.put(Utilidades.RAZA, "San bernardo");
         valDiesisiete.put(Utilidades.GENERO, "Hembra");
-        valDiesisiete.put(Utilidades.DESCRIPCION, "");
+        valDiesisiete.put(Utilidades.DESCRIPCION, "El san bernardo es una raza de perro originaria de los Alpes suizos y del norte de Italia. Es el perro boyero más famoso junto con el mastín del Pirineo y es muy próximo al gran boyero suizo.");
         db.insert(Utilidades.TBL_PERRO, null, valDiesisiete);
 
         ContentValues valDiesiocho = new ContentValues();
@@ -187,7 +187,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valDiesiocho.put(Utilidades.EDAD, 6);
         valDiesiocho.put(Utilidades.RAZA, "Schnauzer gigante");
         valDiesiocho.put(Utilidades.GENERO, "Macho");
-        valDiesiocho.put(Utilidades.DESCRIPCION, "");
+        valDiesiocho.put(Utilidades.DESCRIPCION, "Los Schnauzers gigantes primero surgieron de Suabia en el estado alemán de Baviera y Württemberg en el siglo XVII. Estos Schnauzers gigantes originales eran considerados una versión de pelo duro de las razas pinscher alemanas, y su tipo de pelaje se creía que les ayudaba a soportar los duros inviernos alemanes y picaduras de insectos.");
         db.insert(Utilidades.TBL_PERRO, null, valDiesiocho);
 
         ContentValues valDiesinueve = new ContentValues();
@@ -196,7 +196,7 @@ public class DataHelper extends SQLiteOpenHelper{
         valDiesinueve.put(Utilidades.EDAD, 7);
         valDiesinueve.put(Utilidades.RAZA, "Sin pelo del peru");
         valDiesinueve.put(Utilidades.GENERO, "Hembra");
-        valDiesinueve.put(Utilidades.DESCRIPCION, "");
+        valDiesinueve.put(Utilidades.DESCRIPCION, "es una raza de perro sin pelo originaria del Perú empleada usualmente como animal de compañía. Ha sido reconocido oficialmente como Patrimonio Nacional del Perú.");
         db.insert(Utilidades.TBL_PERRO, null, valDiesinueve);
 
         ContentValues ValVeinte = new ContentValues();
@@ -205,7 +205,7 @@ public class DataHelper extends SQLiteOpenHelper{
         ValVeinte.put(Utilidades.EDAD, 7);
         ValVeinte.put(Utilidades.RAZA, "Welsh corgi pembroke");
         ValVeinte.put(Utilidades.GENERO, "Macho");
-        ValVeinte.put(Utilidades.DESCRIPCION, "");
+        ValVeinte.put(Utilidades.DESCRIPCION, "El Corgi galés de Pembroke es una raza de perro pequeño nativo de Gran Bretaña. Se ha desempeñado durante siglos como perro pastor, u se le considera uno de los perros más antiguos de Gran Bretaña.");
         db.insert(Utilidades.TBL_PERRO, null, ValVeinte);
     }
 }

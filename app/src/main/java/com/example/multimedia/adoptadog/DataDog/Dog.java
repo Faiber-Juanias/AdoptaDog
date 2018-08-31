@@ -7,14 +7,16 @@ public class Dog {
     private int edad;
     private String raza;
     private String genero;
+    private String desc;
 
-    public Dog(int id, int imagen, String nombre, int edad, String raza, String genero) {
+    public Dog(int id, int imagen, String nombre, int edad, String raza, String genero, String desc) {
         this.id = id;
         this.imagen = imagen;
         this.nombre = nombre;
         this.edad = edad;
         this.raza = raza;
         this.genero = genero;
+        this.desc = desc;
     }
 
     public int getId() {
@@ -39,5 +41,9 @@ public class Dog {
 
     public String getGenero() {
         return genero;
+    }
+
+    public String getDesc() {
+        return desc;
     }
 }

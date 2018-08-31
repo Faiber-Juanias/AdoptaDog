@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.multimedia.adoptadog.R;
 
@@ -27,6 +30,8 @@ public class FragmentFollowUs extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ImageButton btnFace, btnTwit;
 
     private OnFragmentInteractionListener mListener;
 
@@ -65,7 +70,26 @@ public class FragmentFollowUs extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment_follow_us, container, false);
+        View vista = inflater.inflate(R.layout.fragment_fragment_follow_us, container, false);
+
+        btnFace = (ImageButton) vista.findViewById(R.id.btn_facebook);
+        btnTwit = (ImageButton) vista.findViewById(R.id.btn_twitter);
+
+        btnFace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Boton Facebook", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnTwit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Boton Twitter", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return vista;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

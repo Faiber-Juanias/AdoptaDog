@@ -37,4 +37,15 @@
     <string name="breed_list_dog">Raza</string>
     <string name="gender_list_dog">Genero</string>
     <string name="title_activity_maps_dogs">Map</string>
+
+    <!--FragmentFollowUs-->
+    <string name="image_logo">Logo principal</string>
+    <string name="view_descripcion_logo">La Fundacion Salva un Amigo se encarga de ofrecer razas de perros finas a
+        aquellas personas las cuales esten interesadas en encontrar a su mascota ideal, contamos con razas extranjeras
+        y comunes las cuales por medio de la adopcion o apadrinacion obtendran un hogar estable. Siguenos en nuestras
+        redes sociales las cuales se presentan a continuacion, asi estaras al dia de
+        nuestras publicaciones y ofertas de las mejores razas que usted podra comprar.
+    </string>
+    <string name="image_facebook">Logo de Facebook</string>
+    <string name="image_twitter">Logo de Twitter</string>
 </resources>

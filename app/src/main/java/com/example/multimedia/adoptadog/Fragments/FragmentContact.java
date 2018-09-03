@@ -1,13 +1,22 @@
 package com.example.multimedia.adoptadog.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
+import com.example.multimedia.adoptadog.ActivityPrincipal;
 import com.example.multimedia.adoptadog.R;
 
 /**
@@ -27,6 +36,12 @@ public class FragmentContact extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private EditText name, lastName, message;
+    private Button btnSend;
+    private Spinner spinner;
+    private ActivityPrincipal activityPrincipal;
+    private Toolbar toolbar;
 
     private OnFragmentInteractionListener mListener;
 
@@ -65,7 +80,67 @@ public class FragmentContact extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment_contact, container, false);
+        View vista = inflater.inflate(R.layout.fragment_fragment_contact, container, false);
+
+        //Validamos si activityPrincipal no es null
+        if (activityPrincipal != null){
+            //Cambiamos el titulo del Toolbar
+            activityPrincipal.toolbar.setTitle("Contacto");
+        }
+
+        //Creo las referencias
+        name = (EditText) vista.findViewById(R.id.txt_name);
+        lastName = (EditText) vista.findViewById(R.id.txt_last_name);
+        message = (EditText) vista.findViewById(R.id.txt_message);
+        btnSend = (Button) vista.findViewById(R.id.btn_send_contact);
+        spinner = (Spinner) vista.findViewById(R.id.spinner);
+
+        String[] dataSpinner = new String[]{"Adoptar", "Apadrinar"};
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, dataSpinner);
+        spinner.setAdapter(adapter);
+
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendEmail();
+            }
+        });
+
+        return vista;
+    }
+
+    private void sendEmail() {
+        String nametxt = name.getText().toString();
+        String lastNametxt = lastName.getText().toString();
+        String body = message.getText().toString();
+        if (!nametxt.isEmpty() && !lastNametxt.isEmpty() && !body.isEmpty()){
+            //Creo el mensaje
+            String messagetxt = "Nombre: " + nametxt + "\n" +
+                    "Apellido: " + lastNametxt + "\n" + body;
+            //Creo el Intent
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            //Especifico el tipo
+            intent.setType("txt/plain");
+            //Especificamos el correo al cual se enviara
+            //pruebafundacion@gmail.com
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"fhjuanias@misena.edu.co"});
+            //Especificamos el asunto del correo
+            intent.putExtra(Intent.EXTRA_SUBJECT, spinner.getSelectedItem().toString());
+            //Especificamos el mensaje del Email
+            intent.putExtra(Intent.EXTRA_TEXT, messagetxt);
+            //Iniciamos el envio
+            startActivity(intent);
+            //startActivity(Intent.createChooser(intent, "Send contact"));
+
+            //Limpiamos los campos
+            name.setText("");
+            lastName.setText("");
+            message.setText("");
+        }else {
+            Toast.makeText(getContext(), "Campos obligatorios.", Toast.LENGTH_SHORT).show();
+        }
+        
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -78,6 +153,9 @@ public class FragmentContact extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        if (context instanceof ActivityPrincipal){
+            activityPrincipal = (ActivityPrincipal) context;
+        }
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {

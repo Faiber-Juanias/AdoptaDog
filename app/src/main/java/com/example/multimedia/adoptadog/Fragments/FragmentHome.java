@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.multimedia.adoptadog.ActivityPrincipal;
 import com.example.multimedia.adoptadog.R;
 
 /**
@@ -27,6 +28,8 @@ public class FragmentHome extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ActivityPrincipal activityPrincipal;
 
     private OnFragmentInteractionListener mListener;
 
@@ -67,6 +70,11 @@ public class FragmentHome extends Fragment {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_fragment_home, container, false);
 
+        //Validamos si activityPrincipal no es null
+        if (activityPrincipal != null){
+            activityPrincipal.toolbar.setTitle("Principal");
+        }
+
         return vista;
     }
 
@@ -80,6 +88,11 @@ public class FragmentHome extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+
+        if (context instanceof ActivityPrincipal){
+            this.activityPrincipal = (ActivityPrincipal) context;
+        }
+
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {

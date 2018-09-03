@@ -48,4 +48,11 @@
     </string>
     <string name="image_facebook">Logo de Facebook</string>
     <string name="image_twitter">Logo de Twitter</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="contact_name">Nombre</string>
+    <string name="contact_last_name">Apellido</string>
+    <string name="contact_contact_message">Mensaje</string>
+    <string name="btn_send_contact">Enviar Solicitud</string>
+
 </resources>

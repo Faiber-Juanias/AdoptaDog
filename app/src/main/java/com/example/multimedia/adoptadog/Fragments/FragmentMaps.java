@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.multimedia.adoptadog.ActivityPrincipal;
 import com.example.multimedia.adoptadog.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -43,6 +44,7 @@ public class FragmentMaps extends Fragment implements OnMapReadyCallback {
     private GoogleMap mMap;
     private MapView mapView;
     private Context context;
+    private ActivityPrincipal activityPrincipal;
 
     private OnFragmentInteractionListener mListener;
 
@@ -83,6 +85,11 @@ public class FragmentMaps extends Fragment implements OnMapReadyCallback {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_fragment_maps, container, false);
 
+        //Validamos que activityPrincipal no sea null
+        if (activityPrincipal != null){
+            activityPrincipal.toolbar.setTitle("Locaciones");
+        }
+
         mapView = (MapView) vista.findViewById(R.id.maps_dogs);
 
         if (mapView != null) {
@@ -104,6 +111,10 @@ public class FragmentMaps extends Fragment implements OnMapReadyCallback {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+
+        if (context instanceof ActivityPrincipal){
+            this.activityPrincipal = (ActivityPrincipal) context;
+        }
 
         if (context instanceof Activity){
             this.context = context;

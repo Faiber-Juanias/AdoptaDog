@@ -1,6 +1,5 @@
 package com.example.multimedia.adoptadog;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,10 +9,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
+import com.example.multimedia.adoptadog.Fragments.FragmentBrowser;
 import com.example.multimedia.adoptadog.Fragments.FragmentContact;
 import com.example.multimedia.adoptadog.Fragments.FragmentDogs;
 import com.example.multimedia.adoptadog.Fragments.FragmentFollowUs;
@@ -23,15 +21,19 @@ import com.example.multimedia.adoptadog.Fragments.FragmentMaps;
 public class ActivityPrincipal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, FragmentContact.OnFragmentInteractionListener,
         FragmentDogs.OnFragmentInteractionListener, FragmentFollowUs.OnFragmentInteractionListener, FragmentHome.OnFragmentInteractionListener,
-        FragmentMaps.OnFragmentInteractionListener{
+        FragmentMaps.OnFragmentInteractionListener, FragmentBrowser.OnFragmentInteractionListener{
+
+    public Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Principal");
         setSupportActionBar(toolbar);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

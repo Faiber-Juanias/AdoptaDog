@@ -7,17 +7,15 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
+import com.example.multimedia.adoptadog.ActivityPrincipal;
 import com.example.multimedia.adoptadog.Adapters.ListDog;
 import com.example.multimedia.adoptadog.DataBase.DataHelper;
 import com.example.multimedia.adoptadog.DataBase.Utilidades;
@@ -50,6 +48,7 @@ public class FragmentDogs extends Fragment{
     private List<Dog> listDog;
     private Context context;
     private SQLiteDatabase objDb;
+    private ActivityPrincipal activityPrincipal;
 
     private OnFragmentInteractionListener mListener;
 
@@ -89,6 +88,11 @@ public class FragmentDogs extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_fragment_dogs, container, false);
+
+        //Validamos si activityPricipal no es null
+        if (activityPrincipal != null){
+            activityPrincipal.toolbar.setTitle("Mascotas");
+        }
 
         objDb = connectDb();
 
@@ -196,6 +200,10 @@ public class FragmentDogs extends Fragment{
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+
+        if (context instanceof ActivityPrincipal){
+            this.activityPrincipal = (ActivityPrincipal) context;
+        }
 
         if (context instanceof Activity){
             this.context = context;

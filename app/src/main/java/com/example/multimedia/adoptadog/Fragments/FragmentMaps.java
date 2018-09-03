@@ -3,14 +3,18 @@ package com.example.multimedia.adoptadog.Fragments;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.multimedia.adoptadog.ActivityPrincipal;
 import com.example.multimedia.adoptadog.R;
@@ -18,6 +22,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -143,7 +148,26 @@ public class FragmentMaps extends Fragment implements OnMapReadyCallback {
             ActivityCompat.requestPermissions((Activity) context, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
             return;
         }
+
         mMap.setMyLocationEnabled(true);
+
+        final LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+
+        mMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
+            @Override
+            public boolean onMyLocationButtonClick() {
+                boolean gpsEnable = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+                if (!gpsEnable){
+                    Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    startActivity(settingsIntent);
+                }else {
+                    CameraPosition cameraPosition = mMap.getCameraPosition();
+                    LatLng latLng = cameraPosition.target;
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+                }
+                return false;
+            }
+        });
 
         LatLng direcUno = new LatLng(4.6766188, -74.0500105);
         mMap.addMarker(new MarkerOptions().position(direcUno).title("Carrera 13 entre 93A y 93B"));

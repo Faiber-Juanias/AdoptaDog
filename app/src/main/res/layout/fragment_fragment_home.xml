@@ -50,7 +50,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/main_text"
-                android:gravity="center"/>
+                android:gravity="left"/>
 
             <TextView
                 android:id="@+id/main_text_two"

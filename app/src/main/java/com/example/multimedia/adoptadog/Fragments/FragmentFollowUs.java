@@ -9,9 +9,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.ImageView;
 
 import com.example.multimedia.adoptadog.ActivityPrincipal;
 import com.example.multimedia.adoptadog.R;
@@ -36,6 +35,7 @@ public class FragmentFollowUs extends Fragment {
 
     private ImageButton btnFace, btnTwit;
     private ActivityPrincipal activityPrincipal;
+    private ImageView imageView;
 
     private OnFragmentInteractionListener mListener;
 
@@ -83,6 +83,7 @@ public class FragmentFollowUs extends Fragment {
 
         btnFace = (ImageButton) vista.findViewById(R.id.btn_facebook);
         btnTwit = (ImageButton) vista.findViewById(R.id.btn_twitter);
+        imageView = (ImageView) vista.findViewById(R.id.image_follow_us);
 
         btnFace.setOnClickListener(new View.OnClickListener() {
             @Override
